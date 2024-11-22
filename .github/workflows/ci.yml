@@ -10,10 +10,10 @@ jobs:
         with:
           version: '7.9.2'
       - uses: actions/setup-node@v3
-          with:
-            node-version: '22'
-            cache: 'pnpm'
-      - run: pnpm install --prefer-offline --frozen-lockfile
+        with:
+          node-version: '22'
+          cache: 'pnpm'
+      - run: pnpm install --prefer-offline --frozen-lockfile 
       - run: pnpm playwright install chromium
       - run: pnpm run ci
         env:
