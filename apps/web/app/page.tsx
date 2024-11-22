@@ -37,7 +37,7 @@ export default function Home() {
           </li>
           <li>Save and see your changes instantly.</li>
         </ol>
-
+        <button type="button">Button</button>
         <div className={styles.ctas}>
           <a
             className={styles.primary}

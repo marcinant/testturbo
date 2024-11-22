@@ -1,0 +1,19 @@
+{
+    "name": "@neutrico/web-tests",
+    "version": "1.0.0",
+    "description": "Web tests for Neutrico",
+    "main": "index.js",
+    "scripts": {
+        "dev:test": "playwright test",
+        "e2e:test": "start-server-and-test \"(cd ../../apps/web && npm run start)\" http://localhost:3000 \"npx playwright test\""
+    },
+    "author": "Neutrico",
+    "license": "MIT",
+    "dependencies": {
+        "start-server-and-test": "^1.14.0",
+        "web": "workspace:*"
+    },
+    "devDependencies": {
+        "@playwright/test": "^1.49.0"
+    }
+}
