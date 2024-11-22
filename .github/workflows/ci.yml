@@ -13,12 +13,14 @@ jobs:
         with:
           node-version: '22'
           cache: 'pnpm'
+      - run: pnpm config set registry https://registry.npmjs.org/
+      - run: pnpm store prune          
       - run: |
           if [ ! -f pnpm-lock.yaml ]; then
             echo "pnpm-lock.yaml not found, generating it."
             pnpm install --lockfile-only
           fi
-      - run: pnpm install --prefer-offline
+      - run: pnpm install
       - run: pnpm playwright install chromium
       - run: pnpm run ci
         env:
