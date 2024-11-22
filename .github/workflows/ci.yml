@@ -13,6 +13,11 @@ jobs:
         with:
           node-version: '22'
           cache: 'pnpm'
+      - run: |
+          if [ ! -f pnpm-lock.yaml ]; then
+            echo "pnpm-lock.yaml not found, generating it."
+            pnpm install --lockfile-only
+          fi
       - run: pnpm install --prefer-offline --frozen-lockfile 
       - run: pnpm playwright install chromium
       - run: pnpm run ci
