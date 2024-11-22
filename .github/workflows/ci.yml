@@ -17,7 +17,7 @@ jobs:
       - run: pnpm store prune
       - run: echo "strict-peer-dependencies=false" >> .npmrc
       - run: pnpm install
-      - run: pnpm playwright install chromium
+      - run: pnpm exec playwright install chromium
       - run: pnpm run ci
         env:
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
